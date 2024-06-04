@@ -1,37 +1,65 @@
-import Link from 'next/link'
-import MobileMenu from './mobile-menu'
+import Link from 'next/link';
+import MobileMenu from './mobile-menu';
+import React from 'react';
+import Scroll from '@/components/scroll';
+import logo from '@/components/svg/logo.png'
+import Image from 'next/image';
+import './button.css'; 
 
 export default function Header() {
   return (
-    <header className="absolute w-full z-30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <header style={{ position: 'fixed', width: '100%', zIndex: 30 }} className="bg-black bg-opacity-10 backdrop-blur-lg">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Site branding */}
-          <div className="shrink-0 mr-4">
+          <div className="shrink-0 mr-20">
             {/* Logo */}
             <Link href="/" className="block" aria-label="Cruip">
-              <svg className="w-8 h-8 fill-current text-purple-600" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <path d="M31.952 14.751a260.51 260.51 0 00-4.359-4.407C23.932 6.734 20.16 3.182 16.171 0c1.634.017 3.21.28 4.692.751 3.487 3.114 6.846 6.398 10.163 9.737.493 1.346.811 2.776.926 4.262zm-1.388 7.883c-2.496-2.597-5.051-5.12-7.737-7.471-3.706-3.246-10.693-9.81-15.736-7.418-4.552 2.158-4.717 10.543-4.96 16.238A15.926 15.926 0 010 16C0 9.799 3.528 4.421 8.686 1.766c1.82.593 3.593 1.675 5.038 2.587 6.569 4.14 12.29 9.71 17.792 15.57-.237.94-.557 1.846-.952 2.711zm-4.505 5.81a56.161 56.161 0 00-1.007-.823c-2.574-2.054-6.087-4.805-9.394-4.044-3.022.695-4.264 4.267-4.97 7.52a15.945 15.945 0 01-3.665-1.85c.366-3.242.89-6.675 2.405-9.364 2.315-4.107 6.287-3.072 9.613-1.132 3.36 1.96 6.417 4.572 9.313 7.417a16.097 16.097 0 01-2.295 2.275z" />
-              </svg>
+              <Image className="w-110 h-110" src={logo} alt="Description of image" width={90} height={90} />
             </Link>
           </div>
 
-          {/* Desktop navigation */}
+          {/* Middle navigation */}
           <nav className="hidden md:flex md:grow">
-            {/* Desktop sign in links */}
-            <ul className="flex grow justify-end flex-wrap items-center">
+            {/* Middle sign in links */}
+            <ul className="flex grow justify-center flex-wrap items-center">
               <li>
-                <Link
-                  href="/signin"
-                  className="font-medium text-purple-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
-                >
-                  Sign in
-                </Link>
+                <Scroll to="about" >
+                  <div className="font-medium text-white-600 hover:text-purple-600 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">About</div>
+                </Scroll>
               </li>
               <li>
-                <Link href="/signup" className="btn-sm text-white bg-purple-600 hover:bg-purple-700 ml-3">
-                  Sign up
-                </Link>
+                <Scroll to="testimonials" >
+                  <div className="font-medium text-white-600 hover:text-purple-600 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">Tokenomics</div>
+                </Scroll>
+              </li>
+              <li>
+                <Scroll to="features" >
+                  <div className="font-medium text-white-600 hover:text-purple-600 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">Features</div>
+                </Scroll>
+              </li>
+              {/* Anchor links */}
+              <li>
+                <Scroll to="zigzag" >
+                  <div className="font-medium text-white-600 hover:text-purple-600 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">Dapp Features</div>
+                </Scroll>
+              </li>
+              <li>
+                <Scroll to="again">
+                  <div className="font-medium text-white-600 hover:text-purple-600 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">Roadmap</div>
+                </Scroll>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Right navigation */}
+          <nav className="hidden md:flex md:grow justify-end">
+            <ul className="flex justify-end flex-wrap items-center">
+              <li>
+                <a className="uiverse" href="/comingsoon" target="_blank" rel="noopener noreferrer">Open Dapp</a>
+              </li>
+              <li>
+                <a className="uiverse" style={{ marginLeft: "10px" }} href="https://tradeinai.gitbook.io/tradein-ai" target="_blank" rel="noopener noreferrer">WhitePaper</a>
               </li>
             </ul>
           </nav>
@@ -41,5 +69,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }

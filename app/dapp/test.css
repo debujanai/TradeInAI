@@ -1,0 +1,134 @@
+*{
+    box-sizing: border-box;
+    padding:0;
+    margin: 0;
+}
+.container {
+  position: relative;
+    display: flex;
+    justify-content: center; /* Center horizontally */    
+    flex-wrap: wrap;
+    margin-top: 20px; /* Adjust this value as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.form {
+  width: 100%;  
+  padding-bottom: 10px;
+  max-width: 530px; /* Adjust as needed */
+  
+}
+
+
+/* Adjust styling for Trending Coins container */
+.trendingCoinsContainer {
+    padding-top: 20px;  /* Adjust as needed */
+    padding-bottom: 20px; /* Adjust as needed */
+  }
+  
+  /* Styling for Trending Coins */
+  .trendingCoins {
+    white-space: nowrap;
+    justify-content: space-around;
+    overflow: hidden;
+    animation: scroll 55s linear infinite;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  
+  
+  .trendingCoins:hover {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Styling for individual coins */
+  .coin {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 8px;
+    padding-right: 40px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.6s;
+    backdrop-filter: blur(10px);
+    background-color: rgba(28, 27, 54, 0.4);
+  }
+  
+  .coin:hover {
+    background-color: rgba(55, 72, 139, 0.6);
+  }
+
+  .tradingViewContainer {
+    width: 80%;
+    max-width: 960px;
+    
+  }
+  
+
+  .paper {
+    padding: 5px; /* Adjust padding as needed */
+    background: rgba(28, 27, 54, 1); /* Slight transparency for a better look */
+    color: white;
+    border-radius: 0px; /* Slight rounding of corners for a cleaner look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 100%; /* Ensure it takes full width within its container */
+    
+  }
+  
+
+
+
+
+
+  
+.inputField .MuiInputBase-input {
+    color: white;
+  }
+  
+  .inputField .MuiInputLabel-root {
+    color: white;
+  }
+  
+  .inputField .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+    border-color: white;
+  }
+  
+  .inputField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: white;
+  }
+  
+  .inputField .MuiOutlinedInput-root .MuiOutlinedInput-input {
+    color: white;
+  }
+  
+  .inputField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-input {
+    color: white;
+  }
+  
+  .inputField .MuiInput-underline:before {
+    border-bottom-color: white;
+  }
+  
+  .inputField:hover .MuiInput-underline:before {
+    border-bottom-color: white;
+  }
+  
+  .inputField .MuiInput-underline:after {
+    border-bottom-color: white;
+  }

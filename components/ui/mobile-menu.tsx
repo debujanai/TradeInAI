@@ -2,7 +2,8 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
-
+import Scroll from '@/components/scroll';
+import './button.css'; 
 export default function MobileMenu() {
   const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false)
 
@@ -60,19 +61,43 @@ export default function MobileMenu() {
         style={mobileNavOpen ? { maxHeight: mobileNav.current?.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0.8 }}
       >
         <ul className="bg-gray-800 px-4 py-2">
+        <li>
+              <Scroll to="about" >
+                  <div className="font-medium text-white-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">About</div>
+                </Scroll>
+              </li>
+              <li>
+                <Scroll to="testimonials" >
+                  <div className="font-medium text-white-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">Tokenomics</div>
+                </Scroll>
+              </li>
+              <li>
+              <Scroll to="features" >
+                  <div className="font-medium text-white-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">Features</div>
+                </Scroll>
+              </li>
+              {/* Anchor links */}
+              <li>
+                <Scroll to="zigzag" >
+                  <div className="font-medium text-white-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">Dapp Features</div>
+                </Scroll>
+              </li>
+ 
+              <li>
+                <Scroll to="again">
+                  <div className="font-medium text-white-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out cursor-pointer">Roadmap</div>
+                </Scroll>
+              </li>
+
+              <li>
+              <a className="uiverse"  href="/comingsoon" target="_blank" rel="noopener noreferrer">Open DApp</a>
+
+              </li>
           <li>
-            <Link href="/signin" className="flex font-medium w-full text-purple-600 hover:text-gray-200 py-2 justify-center" onClick={() => setMobileNavOpen(false)}>
-              Sign in
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/signup"
-              className="font-medium w-full inline-flex items-center justify-center border border-transparent px-4 py-2 my-2 rounded-sm text-white bg-purple-600 hover:bg-purple-700 transition duration-150 ease-in-out" onClick={() => setMobileNavOpen(false)}
-            >
-              Sign up
-            </Link>
-          </li>
+              <a className="uiverse" style={{marginTop:"10px"}} href="https://tradeinai.gitbook.io/tradein-ai" target="_blank" rel="noopener noreferrer">WhitePaper</a>
+
+              </li>
+
         </ul>
       </nav>
     </div>
