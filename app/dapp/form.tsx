@@ -197,7 +197,6 @@ const Form: React.FC = () => {
   const [chartDimensions, setChartDimensions] = useState({ width: 600, height: 600 });
 
   
-  
   useEffect(() => {
     function handleResize() {
       // Adjust dimensions based on screen width
@@ -281,13 +280,11 @@ const Form: React.FC = () => {
       </div>
         <div  className="widget">
         <iframe
-  src="https://jup.ag/"
-  width="400"
-  height="700"
-  title="Matcha Widget"
-  
-></iframe>
-
+      src="https://app.uniswap.org"
+      width="400"
+      height="700"
+      title="Matcha Widget"
+    ></iframe>
       </div>
 
 
