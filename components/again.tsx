@@ -7,7 +7,7 @@ import animationtwo from './lottie/launch-2.json';
 import animationthree from './lottie/checking.json';
 
 export default function Zigzag() {
-  const [currentQuarter, setCurrentQuarter] = useState(1);
+  const [currentQuarter, setCurrentQuarter] = useState(2);
 
   const roadmapItems = [
     {
@@ -84,9 +84,11 @@ export default function Zigzag() {
           <div className="grid gap-20 relative">
             {roadmapItems.map((item, index) => (
               <div key={index} className={`md:grid md:grid-cols-12 md:gap-6 items-center ${item.locked ? 'opacity-50' : ''}`}>
-                {/* Vertical Line and Dots */}
-                {index === 0 ? (
-  <div className="absolute w-6 h-6 bg-purple-600 rounded-full z-10 hidden md:block" style={{ top: `${index * 25 + 5}%`, left: "50%", transform: "translateX(-50%)" }}></div>
+               {/* Vertical Line and Dots */}
+{index === 0 ? (
+  <div className="absolute w-6 h-6 bg-gray-500 rounded-full z-10 hidden md:block" style={{ top: `${index * 25 + 5}%`, left: "50%", transform: "translateX(-50%)" }}></div>
+) : index === 1 ? (
+  <div className="absolute w-6 h-6 bg-purple-600 rounded-full z-20 hidden md:block" style={{ top: `${index * 25 + 5}%`, left: "50%", transform: "translateX(-50%)", opacity: 1 }}></div>
 ) : (
   <div className="absolute w-6 h-6 bg-gray-500 rounded-full z-20 hidden md:block" style={{ top: `${index * 25 + 5}%`, left: "50%", transform: "translateX(-50%)", opacity: 1 }}></div>
 )}
@@ -96,10 +98,15 @@ export default function Zigzag() {
 )}
 
 {/* Content */}
-<div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right">
+<div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-right" >
   <div className="md:pr-4 lg:pr-12 xl:pr-16">
     <div className="font-architects-daughter text-xl text-purple-600 mb-2"></div>
-    <h3 className="h3 mb-3">{item.title}</h3>
+    <h3 className="h3 mb-3" style={{
+    background: 'linear-gradient(to right, #a7ffe2, #82f3ec, #64e6f6, #56d6fd, #60c5ff, #66bfff, #6eb8fe, #78b1fc, #6ab6fe, #5cbaff, #4cbfff, #3bc3ff)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text'
+  }}>{item.title}</h3>
     <ul className="text-xl text-white-400 mb-4 text-justify">
       {item.description.map((point, idx) => (
         <li key={idx}>{point}</li>
