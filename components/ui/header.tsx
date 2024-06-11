@@ -61,6 +61,9 @@ export default function Header() {
               <li>
                 <a className="uiverse" style={{ marginLeft: "10px" }} href="https://tradeinai.gitbook.io/tradein-ai" target="_blank" rel="noopener noreferrer">WhitePaper</a>
               </li>
+              <li>
+                <a className="uiverse" style={{ marginLeft: "10px" }} href="https://www.dextools.io/app/en/ether/pair-explorer/0xaa0d392e535b34a7bccf0ccb17528bedef573a17?t=1718136873297" target="_blank" rel="noopener noreferrer">Dextools</a>
+              </li>
             </ul>
           </nav>
 
