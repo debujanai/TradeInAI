@@ -280,7 +280,7 @@ const Form: React.FC = () => {
       </div>
         <div  className="widget">
         <iframe
-  src="https://app.uniswap.org/"
+  src="https://app.uniswap.org//"
   width="400"
   height="700"
   title="Matcha Widget"

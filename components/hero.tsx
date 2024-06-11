@@ -51,7 +51,7 @@ export default function Hero() {
           position: 'relative',
           zIndex: 1
         }} className="border border-purple-600 rounded-lg p-4">
-        <p>Contract Address: <span id="contract-address">0x000000000000000000000</span></p>
+        <p>Contract Address: <span id="contract-address">0xC9557B7CFADd025295c675abCa65f7713f6a413E</span></p>
       </div>
     </div>
     <div style={{
@@ -61,7 +61,7 @@ export default function Hero() {
       <li>
       <a 
       className="uiverse" 
-      href="https://www.uniswap.com" 
+      href="https://app.uniswap.org/swap?outputCurrency=0xC9557B7CFADd025295c675abCa65f7713f6a413E" 
       target="_blank" 
       rel="noopener noreferrer"
     >
