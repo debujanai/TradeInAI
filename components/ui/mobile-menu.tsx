@@ -90,7 +90,7 @@ export default function MobileMenu() {
               </li>
 
               <li>
-              <a className="uiverse"  href="/dapp" target="_blank" rel="noopener noreferrer">Open DApp</a>
+              <a className="uiverse"  href="/comingsoon" target="_blank" rel="noopener noreferrer">Open DApp</a>
 
               </li>
           <li>
