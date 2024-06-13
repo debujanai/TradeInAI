@@ -149,11 +149,13 @@
 }
 @media (max-width: 768px) {
   .body ,.first, .second {
-      justify-content: flex-start; /* Adjust alignment for smaller screens */
+      justify-content: center; /* Adjust alignment for smaller screens */
+      margin: 20px auto; /* Add some margin for better spacing */
   }
 
   .signals, .ad, .widget, .data {
-      width: 90%; /* Ensure full width on smaller screens */
+      width: 92%; /* Ensure full width on smaller screens */
+      justify-content: center; /* Adjust alignment for smaller screens */
       margin: 10px auto; /* Add some margin for better spacing */
   }
 }

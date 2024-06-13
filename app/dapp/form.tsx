@@ -196,6 +196,7 @@ const Form: React.FC = () => {
   const [selectedSymbol, setSelectedSymbol] = useState('BINANCE:BTCUSDT');
   const [inputSymbol, setInputSymbol] = useState('BTCUSDT');
   const [chartDimensions, setChartDimensions] = useState({ width: 600, height: 600 });
+  const [widgetDimensions, setWidgetDimensions] = useState({ width: 400, height: 500 });
   const [currentSignalIndex, setCurrentSignalIndex] = useState(0);
 
   useEffect(() => {
@@ -205,12 +206,38 @@ const Form: React.FC = () => {
 
     return () => clearInterval(interval); // Clean up the interval on unmount
   }, []);
+
+
+  useEffect(() => {
+    function handleResize() {
+      // Adjust dimensions based on screen width
+      if (window.innerWidth <= 767) {
+        setWidgetDimensions({ width: 320, height: 500 });
+
+      } else {
+        setWidgetDimensions({ width: 400, height: 500 });
+      }
+    }
+
+    // Set initial dimensions
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup function
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  
   
   useEffect(() => {
     function handleResize() {
       // Adjust dimensions based on screen width
       if (window.innerWidth <= 767) {
-        setChartDimensions({ width: window.innerWidth, height: 600 });
+        setChartDimensions({ width: 350, height: 600 });
       } else {
         setChartDimensions({ width: 1200, height: 400 });
       }
@@ -349,8 +376,8 @@ const Form: React.FC = () => {
       <div  className="widget">
         <iframe
   src="https://app.uniswap.org//"
-  width="400"
-  height="500"
+  width={widgetDimensions.width}
+  height={widgetDimensions.height}
   title="Matcha Widget"
   
 ></iframe>
