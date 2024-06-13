@@ -305,21 +305,27 @@ const Form: React.FC = () => {
   return (
     <section  >
       
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <h2 
-  className="h1 mb-4" 
-  data-aos="fade-up" 
-  style={{
-    background: 'linear-gradient(to right, #a7ffe2, #82f3ec, #64e6f6, #56d6fd, #60c5ff, #66bfff, #6eb8fe, #78b1fc, #6ab6fe, #5cbaff, #4cbfff, #3bc3ff)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text', /* Adding text shadow */
-  }}
->
-  Welcome to TradeInAI DAPP
-</h2>
-      </div>
-
+      <div style={{
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center', /* Center vertically */
+  
+}}>
+  <h2 
+    className="h1 mb-4" 
+    data-aos="fade-up" 
+    style={{
+      background: 'linear-gradient(to right, #a7ffe2, #82f3ec, #64e6f6, #56d6fd, #60c5ff, #66bfff, #6eb8fe, #78b1fc, #6ab6fe, #5cbaff, #4cbfff, #3bc3ff)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text', /* Adding text shadow */
+      textAlign: 'center', /* Center text horizontally */
+    }}
+  >
+    Welcome to TradeInAI DAPP
+  </h2>
+</div>
       <div className='body'>
      
     <div className='first'>
