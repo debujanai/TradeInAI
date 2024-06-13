@@ -153,8 +153,8 @@
   }
 
   .signals, .ad, .widget, .data {
-      width: 100%; /* Ensure full width on smaller screens */
-      margin-right: 0; /* Adjust margins */
+      width: 90%; /* Ensure full width on smaller screens */
+      margin: 10px auto; /* Add some margin for better spacing */
   }
 }
 
