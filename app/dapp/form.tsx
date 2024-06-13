@@ -235,10 +235,15 @@ const Form: React.FC = () => {
   
   useEffect(() => {
     function handleResize() {
-      // Calculate dimensions based on screen width (60% width and 50% height for example)
-      const width = Math.floor(window.innerWidth * 0.6);
-      const height = Math.floor(window.innerHeight * 0.4);
-      setChartDimensions({ width, height });
+      const isMobile = window.matchMedia("(max-width: 767px)").matches;
+
+      if (isMobile) {
+        // Set dimensions for mobile screens
+        setChartDimensions({ width: Math.floor(window.innerWidth * 0.8), height: 600 });
+      } else {
+        // Set dimensions for non-mobile screens (60% width and 40% height for example)
+        setChartDimensions({ width: Math.floor(window.innerWidth * 0.6), height: Math.floor(window.innerHeight * 0.4) });
+      }
     }
 
     // Set initial dimensions
@@ -252,7 +257,6 @@ const Form: React.FC = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
   
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {

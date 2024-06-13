@@ -56,7 +56,7 @@ export default function Header() {
           <nav className="hidden md:flex md:grow justify-end">
             <ul className="flex justify-end flex-wrap items-center">
               <li>
-                <a className="uiverse" href="/comingsoon" target="_blank" rel="noopener noreferrer">Open Dapp</a>
+                <a className="uiverse" href="/dapp" target="_blank" rel="noopener noreferrer">Open Dapp</a>
               </li>
               <li>
                 <a className="uiverse" style={{ marginLeft: "10px" }} href="https://tradeinai.gitbook.io/tradein-ai" target="_blank" rel="noopener noreferrer">WhitePaper</a>
