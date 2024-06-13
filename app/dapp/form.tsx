@@ -195,7 +195,7 @@ const Form: React.FC = () => {
   const [IndicatorsData, setIndicatorsData] = useState<IndicatorsData | null>(null);
   const [selectedSymbol, setSelectedSymbol] = useState('BINANCE:BTCUSDT');
   const [inputSymbol, setInputSymbol] = useState('BTCUSDT');
-  const [chartDimensions, setChartDimensions] = useState({ width: 600, height: 600 });
+  const [chartDimensions, setChartDimensions] = useState({ width: 0, height: 0 });
   const [widgetDimensions, setWidgetDimensions] = useState({ width: 400, height: 500 });
   const [currentSignalIndex, setCurrentSignalIndex] = useState(0);
 
@@ -235,12 +235,10 @@ const Form: React.FC = () => {
   
   useEffect(() => {
     function handleResize() {
-      // Adjust dimensions based on screen width
-      if (window.innerWidth <= 767) {
-        setChartDimensions({ width: 350, height: 600 });
-      } else {
-        setChartDimensions({ width: 1200, height: 400 });
-      }
+      // Calculate dimensions based on screen width (60% width and 50% height for example)
+      const width = Math.floor(window.innerWidth * 0.6);
+      const height = Math.floor(window.innerHeight * 0.4);
+      setChartDimensions({ width, height });
     }
 
     // Set initial dimensions
@@ -361,11 +359,14 @@ const Form: React.FC = () => {
 
 </div>
 </div>  
+
+
+
+
+
+
+
 <div  className="second">
-
-
-
-
 <div className='ad'>
   <h2 style={{ textAlign: "center",fontSize: '2rem' }}>Ads here</h2>
 
