@@ -2,23 +2,155 @@
     box-sizing: border-box;
     padding:0;
     margin: 0;
+    
+    
 }
-.container {
+.body{
+  
   position: relative;
-    display: flex;
-    justify-content: center; /* Center horizontally */    
-    flex-wrap: wrap;
-    margin-top: 20px; /* Adjust this value as needed */
-    margin-left: auto;
-    margin-right: auto;
+  display: flex;
+  justify-content: flex-end; /* Center horizontally */    
+  flex-wrap: wrap;
+  
+  margin-left: 50px;
+    
+}
+
+.first {  
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px; /* Adjust margin-top as needed */
+  margin-right: 20px;
+  justify-content:right;
+}
+
+.signals {
+  width: 590px;  
+  background-color: black;
+  color: white; /* Example text color */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width */
+  margin-right: 10px; /* Add margin-right for space */
+  background: radial-gradient(circle, #000000, #0f0509, #170a14, #1c101c, #1e1426, #1e162b, #1e1830, #1c1b35, #1c1b35, #1c1b36, #1c1b36, #1c1b36);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  text-align: center; /* Aligns content inside .signals div */
+  transition: transform 0.5s ease; /* Smooth transition for the transform */
+}
+.signals:hover {
+  border-color: #1c1b36; /* Fallback solid color when border-image is not supported */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  transform: scale(1.05); /* Scale up the element on hover */
 }
 
 
-.form {
+.signal-text {
+  display: flex;
+  justify-content: center; /* Centers child elements horizontally */
+  align-items: center; /* Centers child elements vertically */
+  height: 100%; /* Ensures the container takes full height */
+}
+
+.signal-item {
+  display: none; /* Initially hides all signal items */
+  text-align: center; /* Centers text horizontally */
+  margin: 20px 0; /* Adjust margins as needed */
+}
+
+.line {
+  margin: 5px 0; /* Adjust margins between lines */
+}
+
+.ad {
+  width: 500px;  
+  text-align: center;
+  background-color: black;
+  color: white; /* Example text color */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in width */
+  margin-right: 10px; /* Add margin-right for space */
+  background: radial-gradient(circle, #000000, #0f0509, #170a14, #1c101c, #1e1426, #1e162b, #1e1830, #1c1b35, #1c1b35, #1c1b36, #1c1b36, #1c1b36);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  transition: transform 0.5s ease; /* Smooth transition for the transform */
+}
+.ad:hover {
+  border-color: #1c1b36; /* Fallback solid color when border-image is not supported */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  transform: scale(1.05); /* Scale up the element on hover */
+}
+.coming-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  height: 200px; /* adjust the height as needed */
+}
+
+.coming-text {
+  font-size: 24px; /* adjust font size as needed */
+}
+
+.coming-soon-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center; /* center vertically */
+  height: 500px; /* adjust the height as needed */
+}
+
+.coming-soon-text {
+  font-size: 24px; /* adjust font size as needed */
+}
+.second{
+  margin-top: auto;
+  margin-right: 20px;
+  position: relative;
+  display: flex;
+  justify-content:right; /* Center horizontally */    
+  flex-wrap: wrap;
+  margin-top: 20px; /* Adjust this value as needed */
+  
+
+}
+
+
+
+.widget {  
+ 
+  margin-bottom: 50px;
+  position: relative;
+  transition: transform 0.5s ease; /* Smooth transition for the transform */
+  background: radial-gradient(circle, #000000, #0f0509, #170a14, #1c101c, #1e1426, #1e162b, #1e1830, #1c1b35, #1c1b35, #1c1b36, #1c1b36, #1c1b36);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  padding: 20px;  
+  
+    
+}
+.widget:hover {
+  border-color: #1c1b36; /* Fallback solid color when border-image is not supported */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  transform: scale(1.05); /* Scale up the element on hover */
+}
+
+
+.data {
+  margin-left: 20px;
   width: 100%;  
   padding-bottom: 10px;
-  max-width: 530px; /* Adjust as needed */
-  
+  max-width: 850px; /* Adjust as needed */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  padding-left: 120px;
+  padding-right: 120px; 
+  transition: transform 0.5s ease; /* Smooth transition for the transform */
+  background: radial-gradient(circle, #000000, #0f0509, #170a14, #1c101c, #1e1426, #1e162b, #1e1830, #1c1b35, #1c1b35, #1c1b36, #1c1b36, #1c1b36);
+  padding: 20px;
+  border-radius: 10px;
+
+}
+.data:hover {
+  border-color: #1c1b36; /* Fallback solid color when border-image is not supported */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+  transform: scale(1.05); /* Scale up the element on hover */
 }
 
 
@@ -75,26 +207,38 @@
   }
 
   .tradingViewContainer {
-    width: 80%;
-    max-width: 960px;
+    width: 100%;
+    
     
   }
-  
+  .tradeview {
+    background: radial-gradient(circle, #000000, #0f0509, #170a14, #1c101c, #1e1426, #1e162b, #1e1830, #1c1b35, #1c1b35, #1c1b36, #1c1b36, #1c1b36);
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smooth transition for the transform */
+    position: relative; /* Required for z-index and box-shadow to work */
+    z-index: 1; /* Ensure it's above the shadow */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Add a shadow */    
+
+    
+}
+
+.tradeview:hover {
+    transform: scale(1.05); /* Scale up the element on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Enhance the shadow on hover */
+}
 
   .paper {
-    padding: 5px; /* Adjust padding as needed */
-    background: rgba(28, 27, 54, 1); /* Slight transparency for a better look */
+    padding: 15px; /* Adjust padding as needed */
     color: white;
     border-radius: 0px; /* Slight rounding of corners for a cleaner look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    width: 100%; /* Ensure it takes full width within its container */
-    
+    width: 100%; /* Ensure it takes full width within its container */      
+    margin-top: 10px;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, rgba(23, 27, 38, 0.5), rgba(23, 27, 38, 0.5), rgba(23, 25, 46, 0.5), rgba(21, 24, 42, 0.5), rgba(23, 27, 38, 0.5)); /* Transparent gradient */
   }
   
-
-
-
-
 
   
 .inputField .MuiInputBase-input {

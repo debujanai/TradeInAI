@@ -1,0 +1,12 @@
+[
+  " KUCOIN\nCoin name: SUPER / USDT – \nBuy: 0.78002500 – 0.83686000\nCurrent ask: 0.82800000\nTarget 1: 0.88060000 (6.35%)\nTarget 2: 0.89680000 (8.31%)\nTarget 3:0.91300000 (10.27%)\nStop loss: 0.76270000 (7.89%)\nType: SHORT TERM",
+  " KUCOIN\nCoin name: API3 / USDT – \nBuy: 2.57724500 – 2.78552100\nCurrent ask: 2.75990000\nTarget 1: 2.87751000 (4.26%)\nTarget 2: 2.98584000 (8.19%)\nTarget 3:3.09081000 (11.99%)\nStop loss: 2.51122667 (9.01%)\nType: SHORT TERM",
+  " POLONIEX\nCoin name: LINK / USDT – \nBuy: 14.52041750 – 15.49099000\nCurrent ask: 15.37490000\nTarget 1: 16.25590000 (5.73%)\nTarget 2: 16.51593999 (7.42%)\nTarget 3:16.77597999 (9.11%)\nStop loss: 14.22522333 (7.48%)\nType: SHORT TERM",
+  " BINANCE\nCoin name: NFP / USDT – \nBuy: 0.38725000 – 0.41145400\nCurrent ask: 0.40650000\nTarget 1: 0.43624000 (7.32%)\nTarget 2: 0.44785000 (10.17%)\nTarget 3:0.45946000 (13.03%)\nStop loss: 0.38010000 (6.49%)\nType: SHORT TERM",
+  " OKEX\nCoin name: METIS / USDT – \nBuy: 57.37800000 – 60.96120000\nCurrent ask: 60.78000000\nTarget 1: 62.32200000 (2.54%)\nTarget 2: 63.42000000 (4.34%)\nTarget 3:64.51800000 (6.15%)\nStop loss: 56.23400000 (7.48%)\nType: SHORT TERM",
+  " KUCOIN\nCoin name: AMB / BTC – \nBuy: 0.00000011 – 0.00000012\nCurrent ask: 0.00000012\nTarget 1: 0.00000013 (2.95%)\nTarget 2: 0.00000013 (4.50%)\nTarget 3:0.00000013 (6.05%)\nStop loss: 0.00000011 (7.76%)\nType: SHORT TERM",
+  " BINANCE\nCoin name: WAN / BTC – \nBuy: 0.00000320 – 0.00000338\nCurrent ask: 0.00000337\nTarget 1: 0.00000345 (2.37%)\nTarget 2: 0.00000350 (3.86%)\nTarget 3:0.00000354 (5.04%)\nStop loss: 0.00000314 (6.82%)\nType: SHORT TERM",
+  " KUCOIN\nCoin name: XCN / BTC – \nBuy: 0.00000003 – 0.00000003\nCurrent ask: 0.00000003\nTarget 1: 0.00000003 (4.20%)\nTarget 2: 0.00000003 (6.64%)\nTarget 3:0.00000003 (9.07%)\nStop loss: 0.00000003 (7.34%)\nType: SHORT TERM",
+  " BINANCE\nCoin name: MAV / BTC – \nBuy: 0.00000541 – 0.00000575\nCurrent ask: 0.00000573\nTarget 1: 0.00000596 (4.01%)\nTarget 2: 0.00000608 (6.11%)\nTarget 3:0.00000620 (8.20%)\nStop loss: 0.00000530 (7.50%)\nType: SHORT TERM",
+  " BINANCE_US\nCoin name: FLOKI / USDT – \nBuy: 0.00020517 – 0.00022031\nCurrent ask: 0.00021880\nTarget 1: 0.00022996 (5.10%)\nTarget 2: 0.00023731 (8.46%)\nTarget 3:0.00024467 (11.82%)\nStop loss: 0.00020048 (8.37%)\nType: SHORT TERM"
+]

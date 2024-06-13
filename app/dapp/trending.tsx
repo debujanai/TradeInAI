@@ -50,7 +50,7 @@ export default function Trending() {
   return (
     
     
-    <section className="relative overflow-hidden" style={{  fontFamily: 'Space Grotesk, sans-serif',padding: '20px 0' }}>
+    <section className="relative overflow-hidden" style={{  fontFamily: 'Space Grotesk, sans-serif',padding: '20px 0' }} >
         <div style={{ fontFamily: 'Space Grotesk, sans-serif'}} className="max-w-6xl mx-auto px-4 sm:px-6 trendingCoinsContainer">
           
 

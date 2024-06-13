@@ -6,11 +6,9 @@ import Form from './form';
 
 export default function MyDappPage() {
   return (
-    
     <DappLayout>
-   
-    <Trending/>
-    <Form/>
+      <Trending />
+      <Form />
     </DappLayout>
   );
 }

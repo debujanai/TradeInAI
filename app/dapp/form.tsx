@@ -2,13 +2,14 @@
 import React, {  ReactNode ,useState, useEffect } from 'react';
 import { CircularProgress, Grid, Typography, TextField, Button, makeStyles } from '@material-ui/core';
 import Script from 'next/script';
-
+import Footer from '@/components/ui/footer';
 import axios from 'axios';
 import './test.css'; // Import CSS file
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import Lottie from 'react-lottie';
 import LottieBackground from './animation.json';
-
+import SearchIcon from '@mui/icons-material/Search';
+import signalsData from './signals.json'; 
 interface PivotData {
   pivot_point: {
     classic: {
@@ -158,16 +159,16 @@ const useStyles = makeStyles({
   button: {
     fontFamily: 'Space Grotesk',
     marginTop: '20px',
-    backgroundColor: '#1c1b36',
+    backgroundColor: 'black',
     color: 'white',
     borderRadius: '0px',
-    padding: '16px 32px',
-    fontSize: '0.8rem',
+    padding: '8px 16px',
+    fontSize: '0.6rem',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    width: '120px',
-    height: '60px',
+    width: '80px',
+    height: '40px',
     '&:hover': {
       backgroundColor: '#302e54',
     },
@@ -195,7 +196,15 @@ const Form: React.FC = () => {
   const [selectedSymbol, setSelectedSymbol] = useState('BINANCE:BTCUSDT');
   const [inputSymbol, setInputSymbol] = useState('BTCUSDT');
   const [chartDimensions, setChartDimensions] = useState({ width: 600, height: 600 });
+  const [currentSignalIndex, setCurrentSignalIndex] = useState(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSignalIndex((prevIndex) => (prevIndex + 1) % signalsData.length);
+    }, 5000); // Transition every 5 seconds
+
+    return () => clearInterval(interval); // Clean up the interval on unmount
+  }, []);
   
   useEffect(() => {
     function handleResize() {
@@ -203,7 +212,7 @@ const Form: React.FC = () => {
       if (window.innerWidth <= 767) {
         setChartDimensions({ width: window.innerWidth, height: 600 });
       } else {
-        setChartDimensions({ width: 600, height: 600 });
+        setChartDimensions({ width: 1200, height: 400 });
       }
     }
 
@@ -267,79 +276,142 @@ const Form: React.FC = () => {
 
 
   return (
-    <section style={{  fontFamily: 'Space Grotesk, sans-serif' }} >
+    <section  >
+      
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Typography className='text-justify' variant="h4" style={{ margin: '20px 0', color: 'white' , fontFamily: 'Space Grotesk, sans-serif' }}>
-        Welcome to TradeIn AI DApp
-      </Typography>
+      <h2 
+  className="h1 mb-4" 
+  data-aos="fade-up" 
+  style={{
+    background: 'linear-gradient(to right, #a7ffe2, #82f3ec, #64e6f6, #56d6fd, #60c5ff, #66bfff, #6eb8fe, #78b1fc, #6ab6fe, #5cbaff, #4cbfff, #3bc3ff)',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text', /* Adding text shadow */
+  }}
+>
+  Welcome to TradeInAI DAPP
+</h2>
       </div>
-    <div className="container" >
-   
-             <div className={classes.lottieContainer}>
-      <Lottie options={defaultOptions} />
+
+      <div className='body'>
+     
+    <div className='first'>
+    <div className="signals">
+      
+      <h1 style={{ textAlign: "center",fontSize: '2rem' }}>AI Signals</h1>
+      <div className="coming-container">
+    <p className="coming-text">Coming Soon</p>
+  </div>
+      {/*
+      <div className="signal-text">
+        {signalsData.map((signal, index) => (
+          <div key={index} style={{ display: index === currentSignalIndex ? 'block' : 'none' }} className="signal-item">
+            {signal.split('\n').map((line, lineIndex) => (
+              <div key={lineIndex} className="line">{line}</div>
+            ))}
+          </div>
+        ))}
       </div>
-        <div  className="widget">
+      */}
+    </div>
+
+      <div className='tradeview'>        
+  
+    <AdvancedRealTimeChart
+            symbol={selectedSymbol}
+            theme="dark"
+            autosize={false}
+            width={chartDimensions.width}
+            height={chartDimensions.height}
+          />
+    
+
+</div>
+</div>  
+<div  className="second">
+
+
+
+
+<div className='ad'>
+  <h2 style={{ textAlign: "center",fontSize: '2rem' }}>Ads here</h2>
+
+  <div className="coming-soon-container">
+    <p className="coming-soon-text">Coming Soon</p>
+  </div>
+</div>
+
+
+
+
+
+
+      <div  className="widget">
         <iframe
   src="https://app.uniswap.org//"
   width="400"
-  height="700"
+  height="500"
   title="Matcha Widget"
   
 ></iframe>
 
       </div>
 
+      <div   className="data">
+      <form onSubmit={handleSubmit} className="flex flex-wrap justify-center form">
+  <div className="flex items-center w-full">
+    <div className="flex items-center w-1/2 pr-4">
+      <div style={{ fontSize: '1rem', marginRight: '10px' }}>Enter a coin e.g (BTC/USD)</div>
+      <TextField
+        value={coinName}
+        onChange={(e) => setCoinName(e.target.value)}
+        required
+        className="inputField"
+        InputProps={{
+          style: { color: 'white' },
+        }}
+        InputLabelProps={{
+          style: { color: 'white' },
+        }}
+      />
+    </div>
 
+    <div className="flex items-center w-1/2 pr-4">
+      <div style={{ fontSize: '1rem', marginRight: '10px' }}>Enter Time Period e.g (1h,1d)</div>
+      <TextField
+        value={period}
+        onChange={(e) => setPeriod(e.target.value)}
+        required
+        className="inputField"
+        InputProps={{
+          style: { color: 'white' },
+        }}
+        InputLabelProps={{
+          style: { color: 'white' },
+        }}
+      />
+    </div>
 
-      <div   className="form">
-      <form onSubmit={handleSubmit} className="flex flex-col items-center form">
-            
-            <div style={{ fontSize: '1.3rem' }}>Enter a coin e.g (BTC/USD)</div>
-            <TextField
-              value={coinName}
-              onChange={(e) => setCoinName(e.target.value)}
-              required
-              className="inputField"
-              InputProps={{
-                style: { color: 'white' },
-              }}
-              InputLabelProps={{
-                style: { color: 'white' },
-              }}
-            />
-            <div style={{ fontSize: '1.3rem',marginTop:'20px'  }}>Enter Time Period e.g (1h,1d)</div>
-            <TextField
-              value={period}
-              onChange={(e) => setPeriod(e.target.value)}
-              required
-              className="inputField"
-              InputProps={{
-                style: { color: 'white' },
-              }}
-              InputLabelProps={{
-                style: { color: 'white' },
-              }}
-            />
-            
-            <Button
-            className={classes.button}
-              type="submit"
-              variant="contained"
-              color="primary"
-              disabled={loading}
-              style={{ marginTop: '20px' }}
-            >
-              Fetch Data
-            </Button>
-          </form>
-          <Grid container spacing={1}>
+    <Button
+      className={classes.button}
+      type="submit"
+      variant="contained"
+      color="primary"
+      disabled={loading}
+      
+    >
+      <SearchIcon />
+    </Button>
+  </div>
+</form>
+          <Grid container spacing={2} >
   {pivotData && (
     <Grid item xs={12} sm={5}>
       <div className="paper" style={{ textAlign: 'center' }}>
         <Typography variant="h6" style={{ fontFamily: 'Space Grotesk' }}>
           Classic Pivot Points
         </Typography>
-        <Typography variant="body1" style={{ fontFamily: 'Space Grotesk', fontSize: 'small', fontWeight: 'bold' }}>
+        <Typography variant="body1" style={{ fontFamily: 'Space Grotesk', fontSize: 'small',}}>
           
           PP: {pivotData.pivot_point?.classic?.pp}<br />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -361,7 +433,7 @@ const Form: React.FC = () => {
         <Typography variant="h6" style={{ fontFamily: 'Space Grotesk' }}>
           Fibonacci Pivot Points
         </Typography>
-        <Typography variant="body1" style={{ fontFamily: 'Space Grotesk', fontSize: 'small', fontWeight: 'bold' }}>
+        <Typography variant="body1" style={{ fontFamily: 'Space Grotesk', fontSize: 'small',}}>
           PP: {pivotData.pivot_point?.fibonacci?.pp}<br />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div>
@@ -382,7 +454,7 @@ const Form: React.FC = () => {
         <Typography variant="h6" style={{ fontFamily: 'Space Grotesk' }}>
           Camarilla Pivot Points
         </Typography>
-        <Typography variant="body1" style={{ fontFamily: 'Space Grotesk', fontSize: 'small', fontWeight: 'bold' }}>
+        <Typography variant="body1" style={{ fontFamily: 'Space Grotesk', fontSize: 'small',}}>
           PP: {pivotData.pivot_point?.camarilla?.pp}<br />
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div>
@@ -467,7 +539,8 @@ const Form: React.FC = () => {
       </div>
     )}
   </Grid>
-</Grid>
+  <Grid item xs={12} sm={12}>
+
 {MAData?.count && (
         <div className="paper" style={{ textAlign: 'center' }}>
           <Typography variant="h6" style={{ fontFamily: 'Space Grotesk' }}>
@@ -480,65 +553,16 @@ const Form: React.FC = () => {
           </Typography>
         </div>
       )}
-          
+      </Grid>
+          </Grid>
       </div>  
 
+      </div>
 
-      <div className='tradeview'>
-    <div className="tradingViewContainer">
-    <AdvancedRealTimeChart
-            symbol={selectedSymbol}
-            theme="dark"
-            autosize={false}
-            width={chartDimensions.width}
-            height={chartDimensions.height}
-          />
-    </div>
-      <div className="tradeform">
-    <form 
-        onSubmit={handleLoadChart} 
-        style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            alignItems: 'center', 
-            marginTop: '20px' 
-        }}
-    >
-        <TextField
-            value={inputSymbol}
-            onChange={handleInputChange}
-            required
-            className="inputField"
-            placeholder="Enter Symbol e.g. BTCUSDT"
-            variant="standard"
-            style={{ 
-                width: '300px', // Set a fixed width
-                maxWidth: '350%'// Ensure it doesn't overflow
-            }}
-            InputProps={{
-                style: { color: 'white' },
-            }}
-            InputLabelProps={{
-                style: { color: 'white' },
-            }}
-        />
-            
-            <Button
-            className={classes.button}
-              type="submit"
-              variant="contained"
-              color="primary"
-              disabled={loading}              
-              style={{ paddingBottom: "30px"
-                
-            }}>
-              Load Chart
-            </Button>
-    </form>
-    </div>
-</div>
+<Footer /> 
 </div>
     </section>
+    
   );
 }
 export default Form;
