@@ -17,11 +17,12 @@
 }
 
 .first {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 20px;
-    margin-right: 20px;
-    justify-content: space-between; /* Ensure space is evenly distributed */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-top: 20px;
+  justify-content: space-around; /* Ensure space is evenly distributed */
+  gap: 40px; /* Add space between items */ /* Ensure space is evenly distributed */
 }
 .second {
   
@@ -53,9 +54,17 @@
   transform: scale(1.05); /* Scale up the element on hover */
 }
 
-
+.coming-container {
+  width: 300px;
+  height: 300px;
+  overflow: auto;
+}
+.signal-item .line {
+  font-size: 18px;
+}
 .signal-text {
-  display: flex;
+  margin-top: -30px;
+  display: flex;  
   justify-content: center; /* Centers child elements horizontally */
   align-items: center; /* Centers child elements vertically */
   height: 100%; /* Ensures the container takes full height */
@@ -74,24 +83,18 @@
 .ad {   
   text-align: center;
   background-color: black;
-  color: white; /* Example text color */
-  padding: 40px;
+  color: white; /* Example text color */  
   box-sizing: border-box; /* Include padding in width */
   background: radial-gradient(circle, #000000, #0f0509, #170a14, #1c101c, #1e1426, #1e162b, #1e1830, #1c1b35, #1c1b35, #1c1b36, #1c1b36, #1c1b36);
   border-radius: 10px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
   transition: transform 0.5s ease; /* Smooth transition for the transform */
+  width: 350px;
 }
 .ad:hover {
   border-color: #1c1b36; /* Fallback solid color when border-image is not supported */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
   transform: scale(1.05); /* Scale up the element on hover */
-}
-.coming-container {
-  display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center; /* center vertically */
-  height: 200px; /* adjust the height as needed */
 }
 
 .coming-text {

@@ -10,6 +10,13 @@ import Lottie from 'react-lottie';
 import LottieBackground from './animation.json';
 import SearchIcon from '@mui/icons-material/Search';
 import signalsData from './signals.json'; 
+import Image from 'next/image'
+import myGif from './logo.gif'
+import cheerio from 'cheerio'
+import fs from 'fs/promises'
+
+
+
 interface PivotData {
   pivot_point: {
     classic: {
@@ -199,10 +206,13 @@ const Form: React.FC = () => {
   const [widgetDimensions, setWidgetDimensions] = useState({ width: 400, height: 500 });
   const [currentSignalIndex, setCurrentSignalIndex] = useState(0);
 
+
+
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSignalIndex((prevIndex) => (prevIndex + 1) % signalsData.length);
-    }, 5000); // Transition every 5 seconds
+    }, 10000); // Transition every 5 seconds
 
     return () => clearInterval(interval); // Clean up the interval on unmount
   }, []);
@@ -212,10 +222,10 @@ const Form: React.FC = () => {
     function handleResize() {
       // Adjust dimensions based on screen width
       if (window.innerWidth <= 767) {
-        setWidgetDimensions({ width: 320, height: 500 });
+        setWidgetDimensions({width: Math.floor(window.innerWidth * 0.8), height: 500 });
 
       } else {
-        setWidgetDimensions({ width: 400, height: 500 });
+        setWidgetDimensions({ width: 400, height: 600 });
       }
     }
 
@@ -242,7 +252,7 @@ const Form: React.FC = () => {
         setChartDimensions({ width: Math.floor(window.innerWidth * 0.8), height: 600 });
       } else {
         // Set dimensions for non-mobile screens (60% width and 40% height for example)
-        setChartDimensions({ width: Math.floor(window.innerWidth * 0.6), height: Math.floor(window.innerHeight * 0.4) });
+        setChartDimensions({ width: Math.floor(window.innerWidth * 0.6), height: Math.floor(window.innerHeight * 0.5) });
       }
     }
 
@@ -332,23 +342,20 @@ const Form: React.FC = () => {
      
     <div className='first'>
     <div className="signals">
-      
-      <h1 style={{ textAlign: "center",fontSize: '2rem' }}>AI Signals</h1>
-      <div className="coming-container">
-    <p className="coming-text">Coming Soon</p>
-  </div>
-      {/*
-      <div className="signal-text">
-        {signalsData.map((signal, index) => (
-          <div key={index} style={{ display: index === currentSignalIndex ? 'block' : 'none' }} className="signal-item">
-            {signal.split('\n').map((line, lineIndex) => (
-              <div key={lineIndex} className="line">{line}</div>
-            ))}
-          </div>
-        ))}
-      </div>
-      */}
+  <h1 style={{ textAlign: "center", fontSize: '2rem' }}>AI Signals</h1>
+     
+    <div className="signal-text">
+      {signalsData.map((signal, index) => (
+        <div key={index} style={{ display: index === currentSignalIndex ? 'block' : 'none' }} className="signal-item">
+          {signal.split('\n').map((line, lineIndex) => (
+            <div key={lineIndex} className="line">{line}</div>
+          ))}
+        </div>
+      ))}
     </div>
+  
+</div>
+
 
       <div className='tradeview'>        
   
@@ -371,14 +378,28 @@ const Form: React.FC = () => {
 
 
 <div  className="second">
-<div className='ad'>
-  <h2 style={{ textAlign: "center",fontSize: '2rem' }}>Ads here</h2>
 
-  <div className="coming-soon-container">
-    <p className="coming-soon-text">Coming Soon</p>
+
+<div className="ad">
+  <div className="welcome-text" style={{ padding: '20px', fontSize: '1rem', lineHeight: '1.5' }}>
+    <Image src={myGif} alt="my gif" height={500} width={500} />
+    <br />
+    
+    <p>✅Welcome to Tradein Ai - Intelligent crypto trading solutions✅</p>
+    <p>
+      Our AI powered Dapp leverages advanced AI to provide smart insights into various 
+      cryptocurrency making trading easier and more profitable. With features like pivot 
+      points analysis, moving averages, technical indicators, market sentiment summaries, 
+      AI buy and sell signals, automated trading, and cross-chain trading, we help you 
+      make informed decisions and stay ahead of the market.
+    </p>    
+    <p>Join Us:</p>
+    <p>Telegram: <a href="https://t.me/tradeinai" target="_blank" rel="noopener noreferrer">https://t.me/tradeinai</a></p>
+    <p>Website: <a href="https://tradeinai.io" target="_blank" rel="noopener noreferrer">https://tradeinai.io</a></p>
+    <p>Twitter: <a href="https://x.com/tradeinAi" target="_blank" rel="noopener noreferrer">https://x.com/tradeinAi</a></p>
+    <p style={{ color: '#FF5733', fontWeight: 'bold' }}>For ads contact @<a href="https://t.me/Rage1998" target="_blank" rel="noopener noreferrer">Rage1998</a></p>
   </div>
 </div>
-
 
 
 
