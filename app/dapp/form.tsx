@@ -9,11 +9,9 @@ import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import Lottie from 'react-lottie';
 import LottieBackground from './animation.json';
 import SearchIcon from '@mui/icons-material/Search';
-import signalsData from './signals.json'; 
+import signalsData from '@/signals.json'; 
 import Image from 'next/image'
 import myGif from './logo.gif'
-import cheerio from 'cheerio'
-import fs from 'fs/promises'
 
 
 
