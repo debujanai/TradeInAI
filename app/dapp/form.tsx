@@ -385,7 +385,7 @@ const Form: React.FC = () => {
     <Image src={myGif} alt="my gif" height={500} width={500} />
     <br />
     
-    <p>✅Welcome to Tradein Ai - Intelligent crypto trading solutions✅</p>
+    <p>Welcome to Tradein Ai - Intelligent crypto trading solutions</p>
     <p>
       Our AI powered Dapp leverages advanced AI to provide smart insights into various 
       cryptocurrency making trading easier and more profitable. With features like pivot 
