@@ -1,0 +1,12 @@
+[
+  "Exchange: BINANCE\nCoin name: AST / USDT\nBuy: 0.11342750 – 0.12041100\nCurrent ask: 0.11980000\nTarget 1: 0.12411000 (3.60%)\nTarget 2: 0.12660001 (5.68%)\nTarget 3:0.12909001 (7.75%)\nStop loss: 0.11123667 (7.15%)\nType: SHORT TERM",
+  "Exchange: KRAKEN\nCoin name: SCRT / EUR\nBuy: 0.29499999 – 0.31212400\nCurrent ask: 0.31130000\nTarget 1: 0.31774000 (2.07%)\nTarget 2: 0.32361999 (3.96%)\nTarget 3:0.32949999 (5.85%)\nStop loss: 0.28949999 (7.00%)\nType: SHORT TERM",
+  "Exchange: POLONIEX\nCoin name: UNI / USDT\nBuy: 10.77688749 – 11.45638900\nCurrent ask: 11.37090000\nTarget 1: 11.77669000 (3.57%)\nTarget 2: 11.93835999 (4.99%)\nTarget 3:12.10002999 (6.41%)\nStop loss: 10.56224999 (7.11%)\nType: SHORT TERM",
+  "Exchange: KUCOIN\nCoin name: BB / USDT\nBuy: 0.51269500 – 0.56143800\nCurrent ask: 0.55430000\nTarget 1: 0.57888000 (4.43%)\nTarget 2: 0.59916000 (8.09%)\nTarget 3:0.62424000 (12.62%)\nStop loss: 0.49709333 (10.32%)\nType: SHORT TERM",
+  "Exchange: BINANCE\nCoin name: ALGO / BTC\nBuy: 0.00000221 – 0.00000233\nCurrent ask: 0.00000232\nTarget 1: 0.00000237 (2.16%)\nTarget 2: 0.00000241 (3.88%)\nTarget 3:0.00000245 (5.60%)\nStop loss: 0.00000217 (6.47%)\nType: SHORT TERM",
+  "Exchange: KUCOIN\nCoin name: FINC / USDT\nBuy: 0.08796950 – 0.09379940\nCurrent ask: 0.09280000\nTarget 1: 0.09919400 (6.89%)\nTarget 2: 0.10546700 (13.65%)\nTarget 3:0.11089400 (19.50%)\nStop loss: 0.08622600 (7.08%)\nType: SHORT TERM",
+  "Exchange: KUCOIN\nCoin name: DAPPX / USDT\nBuy: 0.00493298 – 0.00542387\nCurrent ask: 0.00514400\nTarget 1: 0.00575570 (11.89%)\nTarget 2: 0.00614330 (19.43%)\nTarget 3:0.00661970 (28.69%)\nStop loss: 0.00478163 (7.04%)\nType: SHORT TERM",
+  "Exchange: HUOBI\nCoin name: SOFI / USDT\nBuy: 0.01940022 – 0.02073406\nCurrent ask: 0.02055900\nTarget 1: 0.02219259 (7.95%)\nTarget 2: 0.02405800 (17.02%)\nTarget 3:0.02509149 (22.05%)\nStop loss: 0.01900963 (7.54%)\nType: SHORT TERM",
+  "Exchange: KUCOIN\nCoin name: FSN / USDT\nBuy: 0.10966000 – 0.11924200\nCurrent ask: 0.11890000\nTarget 1: 0.12232000 (2.88%)\nTarget 2: 0.12754000 (7.27%)\nTarget 3:0.13168000 (10.75%)\nStop loss: 0.10658000 (10.36%)\nType: SHORT TERM",
+  "Exchange: OKEX\nCoin name: CITY / USDT\nBuy: 2.40267500 – 2.59679000\nCurrent ask: 2.58500000\nTarget 1: 2.70290000 (4.56%)\nTarget 2: 2.73890000 (5.95%)\nTarget 3:2.77490000 (7.35%)\nStop loss: 2.34190000 (9.40%)\nType: SHORT TERM"
+]

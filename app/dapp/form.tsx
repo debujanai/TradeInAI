@@ -9,7 +9,7 @@ import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 import Lottie from 'react-lottie';
 import LottieBackground from './animation.json';
 import SearchIcon from '@mui/icons-material/Search';
-import signalsData from '@/signals.json'; 
+
 import Image from 'next/image'
 import myGif from './logo.gif'
 
@@ -203,18 +203,32 @@ const Form: React.FC = () => {
   const [chartDimensions, setChartDimensions] = useState({ width: 0, height: 0 });
   const [widgetDimensions, setWidgetDimensions] = useState({ width: 400, height: 500 });
   const [currentSignalIndex, setCurrentSignalIndex] = useState(0);
+  const [signalsData, setSignalsData] = useState<any[]>([]);
 
+
+  useEffect(() => {
+    async function fetchSignalsData() {
+      try {
+        const response = await axios.get('/signals.json');
+        setSignalsData(response.data);
+      } catch (error) {
+        console.error('Error fetching signals data:', error);
+      }
+    }
+
+    fetchSignalsData(); // Fetch data when component mounts
+  }, []);;
 
 
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSignalIndex((prevIndex) => (prevIndex + 1) % signalsData.length);
-    }, 10000); // Transition every 5 seconds
-
-    return () => clearInterval(interval); // Clean up the interval on unmount
-  }, []);
-
+    }, 10000);
+  
+    return () => clearInterval(interval);
+  }, [signalsData.length]); // Add signalsData.length as a dependency to ensure useEffect updates when signalsData changes
+  
 
   useEffect(() => {
     function handleResize() {
@@ -342,15 +356,16 @@ const Form: React.FC = () => {
     <div className="signals">
   <h1 style={{ textAlign: "center", fontSize: '2rem' }}>AI Signals</h1>
      
-    <div className="signal-text">
-      {signalsData.map((signal, index) => (
-        <div key={index} style={{ display: index === currentSignalIndex ? 'block' : 'none' }} className="signal-item">
-          {signal.split('\n').map((line, lineIndex) => (
-            <div key={lineIndex} className="line">{line}</div>
-          ))}
-        </div>
+  <div className="signal-text">
+  {signalsData.map((signal, index) => (
+    <div key={index} style={{ display: index === currentSignalIndex ? 'block' : 'none' }} className="signal-item">
+      {signal.split('\n').map((line: string, lineIndex: number) => (
+        <div key={lineIndex} className="line">{line}</div>
       ))}
     </div>
+  ))}
+</div>
+
   
 </div>
 

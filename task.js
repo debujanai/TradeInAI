@@ -54,7 +54,7 @@ const fetchSignals = async () => {
 
     // Save signals to a JSON file
     fs.writeFile(
-      "signals.json",
+      "public/signals.json",
       JSON.stringify(signals, null, 2),
       (err) => {
         if (err) {
@@ -70,4 +70,4 @@ const fetchSignals = async () => {
 };
 
 // Schedule the task to run every 30 seconds
-cron.schedule("0 * * * *", fetchSignals);
+cron.schedule('*/30 * * * * *', fetchSignals);
