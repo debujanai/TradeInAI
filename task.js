@@ -70,4 +70,5 @@ const fetchSignals = async () => {
 };
 
 // Schedule the task to run every 30 seconds
-cron.schedule('*/30 * * * * *', fetchSignals);
+cron.schedule('0 * * * *', fetchSignals);
+
